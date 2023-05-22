@@ -20,9 +20,12 @@ startBoard.addEventListener("click", (e) => {
   makeBoard();
 
   mainBoard.onmouseover = function (event) {
+    let currentElem = null;
+    /* if (currentElem) return */
     let target = event.target.closest(".cell");
+    if (!target) return
+    if (!mainBoard.contains(target)) return;
+    currentElem = target;
     target.style.backgroundColor = "black";
   };
-
-  console.log("clicked");
 });
