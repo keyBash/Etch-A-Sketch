@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="./css/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/main.js" defer></script>
-  </head>
-  <body>
-    <div class="wrapper">
-        <div class="btn-wrapper">
-            <button id="btn-start">START THE GAME</button>
-            <button id="btn-remove">REMOVE</button>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Ethc a sketch</title>
+</head>
+<body>
+<div class="flex-container">
+    <div class="tittle"><h1>SlavPad (CLICK!) </h1></div>
+    <div class="mode">Mode: You are risuete</div>
+    <div class="content">
+        <div class="board"></div>
+        <div class="buttons">
+            <button class="blackButton" onclick="changeColor('black')">black</button>
+            <button class="erasorButton" onclick="changeColor('white')">Eraser</button>
+            <button class="grayButton" onclick="changeColor('gray')">Gray</button>
+            <button class="randomButton" onclick="changeColor('random')">Random</button>
+
+
+            <button onclick="resetBoard()">reset</button>
         </div>
-         <div id="board"></div>
-   
-      
+        <div>
+            <label for="size"><p class="label">FROM 2 to 100 ಠ_ಠ </p></label>
+            <input id="size" type="text" placeholder="Size of board" value="50" onchange="changeSize(this.value)">
+            <button>Set Size</button>
+        </div>
+        <div class="error">Input must be between 2 and 100 (╯°□°）╯︵ ┻━┻</div>
     </div>
-  </body>
+</div>
+</body>
 </html>
